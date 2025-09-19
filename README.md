@@ -35,5 +35,5 @@ Open http://127.0.0.1:5000
 - password: `admin123` (change it immediately)
 
 ## Inline Dependency Installation
-`app.py` will attempt to install missing modules (Flask, Flask-Login, Flask-SQLAlchemy, requests, Werkzeug) at startup.
+`main.py` will attempt to install missing modules (Flask, Flask-Login, Flask-SQLAlchemy, requests, Werkzeug) at startup.
 Disable via: `DISABLE_AUTO_PIP=1`.
