@@ -24,7 +24,7 @@ pip install -r requirements.txt  # optional (app can auto-install)
 python seed.py
 
 # Run the app
-export FLASK_APP=app.py          # Windows: set FLASK_APP=app.py
+export FLASK_APP=main.py          # Windows: set FLASK_APP=main.py
 flask run --port 5000
 ```
 
