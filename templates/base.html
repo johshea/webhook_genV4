@@ -9,7 +9,7 @@
 <body>
   <div id="sidebar">
     <div class="sidebar-inner">
-      <a class="brand" href="{{ url_for('index') }}">Webhook<br>Manager</a>
+      <a class="brand" href="{{ url_for('index') }}">Webhook<br>Generatror</a>
       <div class="links">
         {% if current_user.is_authenticated %}
           {% if current_user.role in ['admin', 'user'] %}
@@ -41,7 +41,7 @@
         {% block content %}{% endblock %}
       </div>
 
-      <footer>© {{ 2025 }} Webhook Manager</footer>
+      <footer>© {{ 2025 }} Webhook Generator v4 - Miles Meraki Forever</footer>
     </div>
   </div>
 </body>
