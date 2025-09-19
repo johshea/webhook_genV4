@@ -8,7 +8,7 @@
       <select name="target_id" required>
         <option value="">-- Select Target --</option>
         {% for t in targets %}
-          <option value="{{ t.id }}" {% if selected_target and selected_target.id==t.id %}selected{% endif %}>{{ t.name }})</option>
+          <option value="{{ t.id }}" {% if selected_target and selected_target.id==t.id %}selected{% endif %}>{{ t.name }}</option>
         {% endfor %}
       </select>
     </div>
