@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Send Webhook</h1>
+<form method="post">
+  <div class="form-row">
+    <div class="field">
+      <label>Target</label>
+      <select name="target_id" required>
+        <option value="">-- Select Target --</option>
+        {% for t in targets %}
+          <option value="{{ t.id }}" {% if selected_target and selected_target.id==t.id %}selected{% endif %}>{{ t.name }} ({{ t.url }})</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="field">
+      <label>Function</label>
+      <select name="function_id" onchange="this.form.submit()">
+        <option value="">-- Select Function --</option>
+        {% for f in functions %}
+          <option value="{{ f.id }}" {% if selected_function and selected_function.id==f.id %}selected{% endif %}>{{ f.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+
+  <div class="field">
+    <label>JSON Payload</label>
+    <textarea name="payload">{{ payload or "" }}</textarea>
+  </div>
+
+  <div class="button-row">
+    <button class="btn" type="submit" name="action" value="send">Send</button>
+  </div>
+</form>
+
+{% if response %}
+  <h2>Response</h2>
+  <pre style="white-space: pre-wrap; background:#0b1220; padding:12px; border-radius:10px; border:1px solid #1f2937;">{{ response }}</pre>
+{% endif %}
+{% endblock %}

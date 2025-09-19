@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Edit Function</h1>
+<form method="post">
+  <div class="form-row">
+    <div class="field">
+      <label>Name</label>
+      <input type="text" name="name" value="{{ function.name }}" required>
+    </div>
+  </div>
+  <div class="field">
+    <label>JSON Template</label>
+    <textarea name="json_template" required>{{ function.json_template }}</textarea>
+  </div>
+  <div class="button-row">
+    <button class="btn" type="submit">Save</button>
+    <a class="btn secondary" href="{{ url_for('manage', tab='functions') }}">Cancel</a>
+  </div>
+</form>
+{% endblock %}

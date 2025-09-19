@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Audit Log</h1>
+
+<div class="button-row">
+  <a class="btn" href="{{ url_for('export_audit_csv') }}">Export CSV</a>
+</div>
+
+<table>
+  <thead><tr><th>Time</th><th>User</th><th>Action</th><th>Details</th></tr></thead>
+  <tbody>
+  {% for a in audits %}
+    <tr>
+      <td>{{ a.timestamp }}</td>
+      <td>{{ a.user.username if a.user else "N/A" }}</td>
+      <td>{{ a.action }}</td>
+      <td>{{ a.details }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

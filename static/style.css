@@ -1,0 +1,111 @@
+:root {
+  --bg:#0f172a;
+  --panel:#0b1220;
+  --card:#111827;
+  --accent:#3b82f6;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --danger:#ef4444;
+  --success:#22c55e;
+  --warning:#f59e0b;
+}
+* { box-sizing: border-box; }
+html, body { margin:0; padding:0; height:100%; }
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial;
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 10% -10%, #1f2937, #0b1220);
+}
+.container { max-width: 95%; margin: 0 auto; padding: 20px; }
+.navbar { background: rgba(17,24,39,.8); backdrop-filter: blur(10px); border-bottom: 1px solid #1f2937; padding: 14px 0; }
+.navbar a.brand { color: var(--text); text-decoration:none; font-weight:700; letter-spacing:.4px; }
+.navbar .links a { color: var(--muted); text-decoration:none; margin-right:14px; }
+.navbar .links a.active, .navbar .links a:hover { color: var(--text); }
+.card { background: rgba(17,24,39,.6); border: 1px solid #1f2937; border-radius: 16px; padding: 18px; box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+h1,h2,h3 { margin: 0 0 12px 0; }
+h1 { font-size: 36px; font-weight: 800; margin: 0 0 12px 0; } h2 { font-size: 24px; color: var(--muted); margin: 0 0 12px 0; }
+.form-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.form-row .field { flex: 1 1 240px; display: flex; flex-direction: column; gap: 6px; }
+label { color: var(--muted); font-size: 14px; }
+input[type=text], input[type=password], textarea, select {
+  border: 1px solid #374151; background: #0b1220; color: var(--text);
+  border-radius: 10px; padding: 10px 12px; outline: none;
+}
+textarea {
+  min-height: 300px;
+  width: 100%;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background: #0b1220;
+  color: #e5e7eb;
+  border: 1px solid #374151;
+  border-radius: 10px;
+  padding: 14px;
+  resize: vertical;
+}
+.button-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.btn { display: inline-block; border: none; padding: 10px 14px; border-radius: 12px; cursor: pointer; text-decoration: none; color: white; background: var(--accent); }
+.btn.secondary { background: #6b7280; } .btn.danger { background: var(--danger); } .btn.small { padding: 6px 10px; border-radius: 10px; font-size: 13px; }
+table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+th, td { border-bottom: 1px solid #1f2937; padding: 10px; text-align: left; }
+th { color: var(--muted); font-weight: 600; }
+tr:hover td { background: rgba(255,255,255,.02); }
+.tabs { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+.tab { background: #0b1220; border: 1px solid #1f2937; border-radius: 999px; padding: 8px 14px; color: var(--muted); text-decoration: none; }
+.tab.active { color: white; background: #1f2937; border-color: #374151; }
+.flash { padding: 10px 12px; border-radius: 8px; margin: 10px 0; }
+.flash.success { background: rgba(34,197,94,.15); border: 1px solid rgba(34,197,94,.35); }
+.flash.error { background: rgba(239,68,68,.15); border: 1px solid rgba(239,68,68,.35); }
+footer { color: var(--muted); font-size: 12px; text-align: center; padding: 16px; margin-top: 24px; opacity:.8; }
+
+/* --- Sidebar Layout --- */
+#sidebar {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: 240px;
+  background: rgba(17,24,39,.9);
+  border-right: 1px solid #1f2937;
+  backdrop-filter: blur(10px);
+}
+#sidebar .sidebar-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 18px;
+  gap: 18px;
+}
+#sidebar .brand {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 800;
+  line-height: 1.2;
+  font-size: 22px;
+  letter-spacing: .6px;
+}
+#sidebar .links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+#sidebar .links a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+#sidebar .links a.active, #sidebar .links a:hover { color: var(--text); background: #1f2937; }
+
+#main { margin-left: 240px; min-height: 100vh; }
+
+/* --- Auth container for centered login --- */
+.auth-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 60px);
+}
+.auth-card {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+}
